@@ -55,3 +55,8 @@
             echo "<p class='lead'>Luna Nueva</p>";
             break;
     }
+    
+?>
+    <br/><img src="assets/images/Moon/Luna<?=($r+2)?>.png"><br/>
+    <img src="assets/images/table-range.png"/>
+</div>

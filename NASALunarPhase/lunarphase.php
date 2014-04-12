@@ -1,33 +1,3 @@
-<<<<<<< HEAD
-<!doctype html>
-<html>
-    <head>
-        <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
-        <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
-        <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
-        <script>
-            $(function() {
-              $("#datepicker" ).datepicker();
-            });
-        </script>
-    </head>
-    <body>
-        <?php
-        if($_POST):
-            $fecha = $_POST['fecha'];
-            include './class/LunarPhases.php';
-        else:
-            ?>
-        <form method="post" action="lunarphase.php">
-            <input type="input" id="datepicker" name="fecha"/>
-            <input type="submit" name="enviar" value="Calcular"/>
-            </form>
-        <?php
-        endif;
-        ?>
-    </body>
-=======
-
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -52,6 +22,14 @@
 		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 		<![endif]-->
+                    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+            <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+            <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+            <script>
+                $(function() {
+                  $("#datepicker" ).datepicker();
+                });
+            </script>
 	</head>
 	<body>
 		<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -107,5 +85,4 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 		<script src="assets/js/bootstrap.min.js"></script>
 	</body>
->>>>>>> 397c0de56b1a5cffe4ab0b48101859ec99056fe0
 </html>
