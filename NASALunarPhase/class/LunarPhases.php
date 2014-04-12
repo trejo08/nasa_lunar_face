@@ -23,7 +23,21 @@ $LPhase = new LunarPhases("01/01/2014", new DateTimeZone("America/El_Salvador"))
 
 $LPhases = new LunarPhases("01/01/2014", new DateTimeZone("America/El_Salvador"));
 $LPhases->modify("+29 days");
-echo "<h1>".$LPhases->format("m/d/Y")."</h1>";
+$LPhases->modify("+12 hours");
+echo "<h1>".$LPhases->format("M/d/Y")."</h1>";
+$LPhases->modify("+29 days");
+$LPhases->modify("+12 hours");
+echo "<h1>".$LPhases->format("M/d/Y")."</h1>";
+
+$LPhases->modify("+29 days");
+$LPhases->modify("+12 hours");
+echo "<h1>".$LPhases->format("M/d/Y")."</h1>";
+
+$LPhases->modify("+29 days");
+$LPhases->modify("+12 hours");
+echo "<h1>".$LPhases->format("M/d/Y")."</h1>";
+/*$LPhases->modify("+29 days");
+echo "<h1>".$LPhases->format("m/d/Y")."</h1>";*/
 
 $date = new DateTime("01/16/2014", new DateTimeZone('America/El_Salvador'));
 $numero = $LPhase->getDiference($date);
