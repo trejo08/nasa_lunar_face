@@ -1,66 +1,31 @@
 <?php
-class LunarPhases extends DateTime {
-    
-    public function __construct($time='now', DateTimeZone $object){
-        parent::__construct($time, $object);
-    }
-    
-    public function __toString() {
-        return $this->format("d:m:y -- H:i:s");
-    }
-    
-    public function getDiference(DateTime $date){
-        $this->diff($date);
-        $interval = $this->diff($date);
-        return $interval;
-    }   
-}
+$now = new DateTime("03/15/2014", new DateTimeZone('America/El_Salvador'));
+$dateinit = new DateTime("01/01/2014", new DateTimeZone("America/El_Salvador"));
 
-//$date = new DateTime("03/01/2014", new DateTimeZone("America/El_Salvador"));
-//echo $date->format("d/m/Y");
+//tmpfecha
+$tmplastdate = $dateinit;
+$piv = NULL;
+while($dateinit->format("Ymd")<$now->format("Ymd")):
+    $dateinit->modify("+29 days");
+    $dateinit->modify("+12 hours");
+    if($now->format("Ymd")<=$dateinit->format("Ymd")):
+        $dateinit->modify("-29 days");
+        $dateinit->modify("-12 hours");
+        //echo $dateinit->format("M/d/Y")."<br/>";
+        break;
+    endif;
+endwhile;
 
-$LPhase = new LunarPhases("01/01/2014", new DateTimeZone("America/El_Salvador"));
-
-$LPhases = new LunarPhases("01/01/2014", new DateTimeZone("America/El_Salvador"));
-$LPhases->modify("+29 days");
-$LPhases->modify("+12 hours");
-echo "<h1>".$LPhases->format("M/d/Y")."</h1>";
-$LPhases->modify("+29 days");
-$LPhases->modify("+12 hours");
-echo "<h1>".$LPhases->format("M/d/Y")."</h1>";
-
-$LPhases->modify("+29 days");
-$LPhases->modify("+12 hours");
-echo "<h1>".$LPhases->format("M/d/Y")."</h1>";
-
-$LPhases->modify("+29 days");
-$LPhases->modify("+12 hours");
-echo "<h1>".$LPhases->format("M/d/Y")."</h1>";
-/*$LPhases->modify("+29 days");
-echo "<h1>".$LPhases->format("m/d/Y")."</h1>";*/
-
-$date = new DateTime("01/16/2014", new DateTimeZone('America/El_Salvador'));
-$numero = $LPhase->getDiference($date);
-
-echo "<h1>".$numero->days."</h1>";
-
-var_dump($numero);
-if($numero->days>=29):
-    $res = $numero->days % 29;
-    $res2 = $numero->days / 29;
-else:
-     $res = $numero->days;
-     $res2 = $numero->days;
+$int = $dateinit->diff($now);
+$r = $int->days-1;
+$n = new DateTime("03/15/2014", new DateTimeZone("America/El_Salvador"));
+echo "<div> Fecha Actual:".$n->format("d/m/Y")."</div>";
+if($r==0):
+    $r = "especial";
 endif;
 
-echo "<br/>Modulo: ".((int)$res)."<br/>";
-echo "<br/>Cociente: ".$res2."<br/>";
+//echo $int->days-1 ."<br/>";
 
-$r= (int)$res;
-
-if($r==0){
-    $r = "especial";
-}
 switch ($r){
     case $r == "especial":
         echo "Luna Nueva";
@@ -90,9 +55,11 @@ switch ($r){
         echo "Cuarto Menguante";
         break;
     
-    case $r>=23 && $r<=28:
+    case $r>=23 && $r<=26:
         echo "Creciente Menguante";
+        break;
+    case $r>=27 && $r<=28:
+        echo "Luna Nueva";
         break;
     
 }
-?>
