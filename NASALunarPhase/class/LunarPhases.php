@@ -1,5 +1,6 @@
+<div style="text-align: center;">
 <?php
-$now = new DateTime("03/15/2014", new DateTimeZone('America/El_Salvador'));
+$now = new DateTime($fecha, new DateTimeZone('America/El_Salvador'));
 $dateinit = new DateTime("01/01/2014", new DateTimeZone("America/El_Salvador"));
 
 //tmpfecha
@@ -18,8 +19,8 @@ endwhile;
 
 $int = $dateinit->diff($now);
 $r = $int->days-1;
-$n = new DateTime("03/15/2014", new DateTimeZone("America/El_Salvador"));
-echo "<div> Fecha Actual:".$n->format("d/m/Y")."</div>";
+$n = new DateTime($fecha, new DateTimeZone("America/El_Salvador"));
+echo "<div> Fecha Actual: ".$n->format("d/m/Y")."</div>";
 if($r==0):
     $r = "especial";
 endif;
@@ -63,3 +64,7 @@ switch ($r){
         break;
     
 }
+?>
+<br/><img src="assets/images/Moon/Luna<?=($r)+3?>.png"/>
+<br/><img src="assets/images/table-range.png"/>
+</div>

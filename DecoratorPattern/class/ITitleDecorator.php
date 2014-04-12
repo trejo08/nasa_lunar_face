@@ -68,7 +68,7 @@ class SimpleTextWithBorder extends Decorator{
 }
 
 
-/*$text1 = new SimpleText("Hola Mundo");
+$text1 = new SimpleText("Hola Mundo");
 $textH1 = new SimpleTextWithHeader($text1);
 echo $textH1->getTitle();
 
@@ -90,4 +90,4 @@ echo $texcoloconborde->getTitle();
 
 $text6 = new SimpleText('Otra Combinacion mas');
 $textborde = new SimpleTextWithBorder($text5);
-echo $textborde->getTitle();*/
+echo $textborde->getTitle();
