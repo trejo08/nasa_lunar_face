@@ -1,6 +1,6 @@
 <div style="text-align: center;">
 <?php
-    $now = new DateTime("03/15/2014", new DateTimeZone('America/El_Salvador'));
+    $now = new DateTime($date, new DateTimeZone('America/El_Salvador'));
     $dateinit = new DateTime("01/01/2014", new DateTimeZone("America/El_Salvador"));
 
     //tmpfecha
@@ -19,8 +19,8 @@
 
     $int = $dateinit->diff($now);
     $r = $int->days-1;
-    $n = new DateTime("03/15/2014", new DateTimeZone("America/El_Salvador"));
-    echo "<h1> Fecha Actual:".$n->format("d/m/Y")."</h1>";
+    $n = new DateTime($date, new DateTimeZone("America/El_Salvador"));
+    echo "<h1> Fecha Calculada es:".$n->format("d/m/Y")."</h1>";
     if($r==0):
         $r = "especial";
     endif;

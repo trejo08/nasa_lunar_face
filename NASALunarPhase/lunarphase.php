@@ -26,8 +26,8 @@
             <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
             <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
             <script>
-                $(function() {
-                  $("#datepicker" ).datepicker();
+                $(document).ready(function(){
+                    $("#datepicker" ).datepicker();
                 });
             </script>
 	</head>
@@ -65,13 +65,15 @@
 			<div class="stater-template">
 				<?php
 					if($_POST):
+                                                $date = $_POST['date'];
 						echo "<div class='starter-template'>";
 						include './class/LunarPhases.php';
 						echo "</div>";
 					else:
 				?>
 					<form method="post" action="lunarphase.php">
-						<input type="submit" name="enviar" value="Calcular"/>
+                                            <input type="text" id="datepicker" name="date" />
+                                            <input type="submit" name="enviar" value="Calcular"/>
 					</form>
 				<?php
 					endif;
