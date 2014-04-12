@@ -22,14 +22,8 @@
 		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 		<![endif]-->
-            <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
-            <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
-            <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
-            <script>
-                $(document).ready(function(){
-                    $data = $("#datepicker").datepicker();
-                });
-            </script>
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+                <script src="http://eternicode.github.io/bootstrap-datepicker/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
 	</head>
 	<body>
             <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -63,7 +57,7 @@
                         else:
                         ?>
                         <form method="post" action="lunarphase.php">
-                            <input id="datepicker" type="text" name="date" />
+                            <input class="datepicker" type="text" name="date" />
                             <input type="submit" name="enviar" value="Calcular"/>
                         </form>
                         <?php
@@ -75,7 +69,16 @@
 		<!-- Bootstrap core JavaScript
 		================================================== -->
 		<!-- Placed at the end of the document so the pages load faster -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 		<script src="assets/js/bootstrap.min.js"></script>
+                <script>
+                    $(document).ready(function(){
+                        $('.datepicker').datepicker({
+                            format: "mm/dd/yyyy",
+                            todayBtn: "linked",
+                            autoclose: true,
+                            todayHighlight: true
+                        });
+                    });
+                </script>
 	</body>
 </html>

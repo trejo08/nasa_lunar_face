@@ -18,7 +18,6 @@
     endwhile;
 
     $int = $dateinit->diff($now);
-    
     $r = $int->days-1;
     $n = new DateTime($date, new DateTimeZone("America/El_Salvador"));
     echo "<h1> Fecha Calculada es:".$n->format("d/m/Y")."</h1>";
