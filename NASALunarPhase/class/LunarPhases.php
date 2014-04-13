@@ -20,16 +20,16 @@
     $int = $dateinit->diff($now);
     $r = $int->days-1;
     $n = new DateTime($date, new DateTimeZone("America/El_Salvador"));
-    echo "<h1> Fecha Calculada es:".$n->format("d/m/Y")."</h1>";
+    echo "<h1> Fecha Calculada es: ".$n->format("d/m/Y")."</h1>";
     if($r==0):
         $r = "especial";
     endif;
     $aux = new DateTime("01/01/2014", new DateTimeZone("America/El_Salvador"));
     $intaux = $aux->diff($now);
-    echo "horas".$intaux->h;
-    echo "dias x 24".$intaux->days * 24 ."<br>";
-    echo $hours = ($intaux->days * 24) + $intaux->h ."<br/>";
-    //var_dump($intaux);.
+    /*echo "horas".$intaux->h;
+    echo "dias x 24".$intaux->days * 24 ."<br>";*/
+    //var_dump($intaux);
+    $hours = ($intaux->days * 24) + $intaux->h ."<br/>";
     $dayhour = $hours * 107.826 ;
     $difporc = ((100 * $dayhour)/ 944555.76); 
     echo "La Tierra a recorrido ".$dayhour."km desde el 01/01/2014 a la fecha de hoy, "
@@ -65,6 +65,6 @@
     }
     
 ?>
-    <br/><img src="assets/images/Moon/Luna<?=($r+2)?>.png"><br/>
+    <img src="assets/images/Moon/Luna<?=($r+2)?>.png"><br/>
     <img src="assets/images/table-range.png"/>
 </div>

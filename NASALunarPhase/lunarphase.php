@@ -22,6 +22,7 @@
 		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 		<![endif]-->
+                <link href="http://eternicode.github.io/bootstrap-datepicker/bootstrap-datepicker/css/datepicker3.css" rel="stylesheet">
                 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
                 <script src="http://eternicode.github.io/bootstrap-datepicker/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
 	</head>
@@ -47,7 +48,7 @@
                     </div>
             </div>
 		<div class="container">
-                    <div class="stater-template">
+                    <div class="stater-template" style="color: whitesmoke; font-weight: bolder;">
                         <?php
                         if($_POST):
                                 $date = $_POST['date'];
@@ -58,7 +59,7 @@
                         ?>
                         <form method="post" action="lunarphase.php">
                             <input class="datepicker" type="text" name="date" />
-                            <input type="submit" name="enviar" value="Calcular"/>
+                            <input type="submit" class="btn-primary" name="enviar" value="Calcular"/>
                         </form>
                         <?php
                         endif;
